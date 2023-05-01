@@ -36,12 +36,11 @@ public class ShoppersService {
         });
     }
 
-    public List<ProductShoppersOutputDto> getShoppers(String productId, Integer limit) {
-        return null;
+    public ProductShoppersOutputDto getShoppers(String productId, Integer limit) {
+        return shoppersRepository.getShoppersByProduct(productId, checkLimit(limit));
     }
 
     public ShopperProductsOutputDto getProductInfo(String shopperId, String category, String brand, Integer limit) {
-        int validLimit = checkLimit(limit);
         return shoppersRepository.getProductsByShopper(shopperId, category, brand, checkLimit(limit));
     }
 

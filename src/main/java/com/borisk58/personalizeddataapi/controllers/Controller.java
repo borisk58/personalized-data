@@ -22,11 +22,11 @@ public class Controller {
     * eCommerce
     * */
     @GetMapping("/shoppers")
-    public ResponseEntity<List<ProductShoppersOutputDto>> getShoppers(
+    public ResponseEntity<ProductShoppersOutputDto> getShoppers(
             @RequestParam(value = "productId") String productId,
             @RequestParam(value = "limit", required = false) Integer limit) {
 
-        List<ProductShoppersOutputDto> shoppers = shoppersService.getShoppers(productId, limit);
+        ProductShoppersOutputDto shoppers = shoppersService.getShoppers(productId, limit);
         return new ResponseEntity<>(shoppers, HttpStatus.OK);
     }
 
