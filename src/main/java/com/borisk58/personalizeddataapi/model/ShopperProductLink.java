@@ -18,7 +18,7 @@ public class ShopperProductLink {
 
     public String getId() {
         // todo: check shopperId and productId are assigned
-        return shopperId + "::" + productId;
+        return String.format("%s::%s", shopperId, productId);
     }
 
 }

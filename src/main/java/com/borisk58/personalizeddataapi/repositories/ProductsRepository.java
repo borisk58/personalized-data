@@ -7,5 +7,5 @@ import java.util.List;
 public interface ProductsRepository {
     void upsertProduct(Product product);
     void deleteProduct(String productId);
-    List<Product> getProducts(Iterable<String> productIds);
+    List<Product> getProducts(List<String> productIds, String category, String brand);
 }

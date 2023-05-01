@@ -13,5 +13,5 @@ import java.util.Map;
 @Setter
 public class ShopperInputDto {
     private String shopperId;
-    private final Map<String, ShopperProductInputDto> shelf = new Hashtable<>();
+    private Map<String, ShopperProductInputDto> shelf = new Hashtable<>();
 }

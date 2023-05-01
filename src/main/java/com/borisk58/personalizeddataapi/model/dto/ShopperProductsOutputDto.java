@@ -11,7 +11,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ShopperOutputDto {
+public class ShopperProductsOutputDto {
     String shopperId;
     List<ProductOutputDto> products;
 }
