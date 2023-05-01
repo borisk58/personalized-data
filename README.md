@@ -32,3 +32,7 @@ GET "/shoppers"
 <li>Brand - String, optional
 <li>Limit - Integer, optional, default = 10, max = 100
 </ul>
+
+# Requires
+Local [MongoDB](https://www.mongodb.com/docs/manual/installation/) <br>
+Mongo shell [mongosh](https://www.mongodb.com/docs/mongodb-shell/)

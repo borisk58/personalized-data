@@ -27,11 +27,11 @@ public class ShoppersService {
     }
 
     public void createOrUpdateShopper(ShopperInputDto shopper) {
-        shopper.getShelf().keySet().forEach(p -> {
+        shopper.getShelf().forEach(p -> {
             ShopperProductLink shopperProductLink = new ShopperProductLink();
             shopperProductLink.setShopperId(shopper.getShopperId());
-            shopperProductLink.setProductId(p);
-            shopperProductLink.setRelevancyScore(shopper.getShelf().get(p).getRelevancyScore());
+            shopperProductLink.setProductId(p.getProductId());
+            shopperProductLink.setRelevancyScore(p.getRelevancyScore());
             this.shoppersRepository.upsertShopper(shopperProductLink);
         });
     }

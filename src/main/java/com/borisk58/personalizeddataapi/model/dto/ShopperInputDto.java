@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Map;
 
 /*
@@ -13,5 +14,5 @@ import java.util.Map;
 @Setter
 public class ShopperInputDto {
     private String shopperId;
-    private Map<String, ShopperProductInputDto> shelf = new Hashtable<>();
+    private List<ShopperProductInputDto> shelf;
 }
