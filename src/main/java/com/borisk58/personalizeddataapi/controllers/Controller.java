@@ -5,6 +5,7 @@ import com.borisk58.personalizeddataapi.model.dto.ProductShoppersOutputDto;
 import com.borisk58.personalizeddataapi.model.dto.ShopperInputDto;
 import com.borisk58.personalizeddataapi.model.dto.ShopperProductsOutputDto;
 import com.borisk58.personalizeddataapi.services.ShoppersService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/")
 public class Controller {
-    private ShoppersService shoppersService;
+    @Autowired
+    ShoppersService shoppersService;
 
     /*
     * eCommerce
@@ -43,7 +45,7 @@ public class Controller {
     * Data Team
     * */
     @PostMapping("/products")
-    public ResponseEntity<Void> createOrUpdateProducts(Product product) {
+    public ResponseEntity<Void> createOrUpdateProducts(@RequestBody Product product) {
         // todo: validate input and return BAD_REQUEST if bad
         try {
             shoppersService.createOrUpdateProduct(product);
