@@ -40,10 +40,9 @@ public class ShoppersService {
         return null;
     }
 
-    public List<ShopperProductsOutputDto> getProductInfo(String shopperId, String category, String brand, Integer limit) {
+    public ShopperProductsOutputDto getProductInfo(String shopperId, String category, String brand, Integer limit) {
         int validLimit = checkLimit(limit);
-        shoppersRepository.getProductsByShopper(shopperId, category, brand, checkLimit(limit));
-        return null;
+        return shoppersRepository.getProductsByShopper(shopperId, category, brand, checkLimit(limit));
     }
 
     private int checkLimit(Integer limit) {

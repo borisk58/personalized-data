@@ -31,13 +31,13 @@ public class Controller {
     }
 
     @GetMapping("/products")
-    private ResponseEntity<List<ShopperProductsOutputDto>> getProductsByShopper(
+    private ResponseEntity<ShopperProductsOutputDto> getProductsByShopper(
             @RequestParam(value = "shopperId") String shopperId,
             @RequestParam(value = "category", required = false) String category,
             @RequestParam(value = "brand", required = false) String brand,
             @RequestParam(value = "limit", required = false) Integer limit) {
 
-        List<ShopperProductsOutputDto> products = shoppersService.getProductInfo(shopperId, category, brand, limit);
+        ShopperProductsOutputDto products = shoppersService.getProductInfo(shopperId, category, brand, limit);
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
